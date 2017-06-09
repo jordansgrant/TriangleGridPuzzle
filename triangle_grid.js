@@ -116,9 +116,9 @@ triangle_grid.prototype.get_min_point = function(points) {
 //				the minimum. In other words, a side point with a higher x-value means its an even column.
 // Return: The column number of the triangle encoded by the 3 points
 triangle_grid.prototype.get_column = function(min, points) {
-	// find the even column associated with this minimum point in the triangle
-	var evenCol = Math.round(min.x / this.xStep);
-	evenCol = evenCol * 2 + 1;
+	// find the odd column associated with this minimum point in the triangle
+	var oddCol = Math.round(min.x / this.xStep);
+	oddCol = oddCol * 2 + 1;
 	
 	// find out if the side points x value is larger than the min points x value
 	var j = 0;
@@ -126,8 +126,8 @@ triangle_grid.prototype.get_column = function(min, points) {
 		if (points[i].x > min.x)
 			j++;
 	}
-	// if the side point had a a larger x value return lowerCo
-	return (j == 2) ? evenCol + 1 : evenCol;
+	// if the side point had a a larger x value return oddCol
+	return (j == 2) ? oddCol + 1 : oddCol;
 };
 
 // Function: is_row_col
