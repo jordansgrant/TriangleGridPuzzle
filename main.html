@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Triangle Puzzle</title>
+		<!-- Link style sheets -->
+		<link rel="stylesheet" type="text/css" href="public/css/bootstrap.min.css" />
+		<!-- Link object definitions -->
+		<script type="text/javascript" src="draw_canvas.js" ></script>
+		<script type="text/javascript" src="array_interface.js" ></script>
+		<script type="text/javascript" src="triangle_grid.js" ></script>
+	</head>
+	<body>
+		<!-- Container holding row/columnt lookup form. -->
+		<!-- Each numerical form input uses a min/max, step, and onkeydown options to constrain the domain of points -->
+		<!-- Available to the user. This simplifies the process of determining whether a triangle is valid or not -->
+		<div class="container">
+			<form class="form-inline">
+				<!-- Point 1 coordinate input -->
+				<div class="mt-2 mr-2 mb-2 ml-2">
+					<!-- Point 1 X Value -->
+					<div class="input-group">
+						<div class="input-group-addon">Point 1 X</div>
+						<input id="p1x" onkeydown="return false" class="form-control" type="number" min="0" max="600" step="100">
+					</div>
+					<!-- Point 1 Y Value -->
+					<div class="input-group">
+						<div class="input-group-addon">Point 1 Y</div>
+						<input id="p1y" onkeydown="return false" class="form-control" type="number" min="0" max="600" step="100">
+					</div>
+				</div>
+				<!-- Point 2 coordinate input -->
+				<div class="mt-2 mr-2 mb-2 ml-2">
+					<!-- Point 2 X Value -->
+					<div class="input-group">
+						<div class="input-group-addon">Point 2 X</div>
+						<input id="p2x" onkeydown="return false" class="form-control" type="number" min="0" max="600" step="100">
+					</div>
+					<!-- Point 2 Y Value -->
+					<div class="input-group">
+						<div class="input-group-addon">Point 2 Y</div>
+						<input id="p2y" onkeydown="return false" class="form-control" type="number" min="0" max="600" step="100">
+					</div>
+				</div>	
+				<!-- Point 3 coordinate input -->
+				<div class="mt-2 mr-2 mb-2 ml-2">
+					<!-- Point 3 X Value -->
+					<div class="input-group">
+						<div class="input-group-addon">Point 3 X</div>
+						<input id="p3x" onkeydown="return false" class="form-control" type="number" min="0" max="600" step="100">
+					</div>
+					<!-- Point 3 Y Value -->
+					<div class="input-group">
+						<div class="input-group-addon">Point 3 Y</div>
+						<input id="p3y" onkeydown="return false" class="form-control" type="number" min="0" max="600" step="100">
+					</div>
+				</div>
+				<!-- Submit button -->
+				<div class="mt-4 mr-2 mb-4 ml-2">
+					<button id="get_row_col" type="button" class="btn btn-secondary" >Get Row/Col</button>
+				</div>
+			</form>
+		</div>
+		<!-- Canvas Container, basic styling in custom.css -->
+		<div class="container">
+			<canvas style="background-color: #368BC1;" id="canvas">
+			</canvas>
+		</div>
+		<!-- Modal used to report success or failure of row/column lookup -->
+		<div id="modal" class="modal fade">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<!-- Simple Header containing descriptive title -->
+					<div class="modal-header">
+						<h5 class="modal-title">Row/Col Inquiry</h5>
+					</div>
+					<!-- Body contains display text for success or failure -->
+					<!-- and a hidden p tag used to display the row and column if found -->
+					<div class="modal-body">
+						<p id="modal_text"></p>
+						<p style="text-align:center" id="modal_row_col"><p/>
+					</div>
+					<!-- Footer containing the button to close the modal -->
+					<div class="modal-footer">
+						<button id="modal_close" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- bootstrap and jquery dependencies -->
+		<script type="text/javascript" src="public/js/jquery-3.2.0.slim.min.js"></script>
+        <script type="text/javascript" src="public/js/tether.min.js"></script>
+        <script type="text/javascript" src="public/js/bootstrap4.min.js"></script>
+		<!-- main entry point of the javascript application -->
+		<script type="text/javascript" src="main.js"></script>
+	</body>
+</html>
