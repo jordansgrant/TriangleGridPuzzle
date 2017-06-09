@@ -10,7 +10,8 @@ file:///[Path to main.html]
 
 ### Description:
 
-I implemented the puzzle as a simple web page that can be loaded using file:///[path to html] to load in a browser.
+I implemented the puzzle as a simple web page that can be loaded using file:///[path to html] to load in a browser. The browser is a clean
+way to insure portability and prevent the reviewer from needing any special libraries or software installed
 
 The bulk of the logic is contained in __triangle_grid.js__ . __draw_canvas.js__ and __array_interface.js__ are implementations of interfaces
 used by  __triangle_grid.js__ for drawing the grid to an HTML5 canvas tag and for memoizing the recursive grid generation respectively.
