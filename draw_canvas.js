@@ -24,7 +24,7 @@ function draw_canvas(id, x_size, y_size, stroke, alpha) {
 	this.context.globalAlpha = alpha;
 }
 // Function: draw_triangles
-// Create a new triangle grid object
+// Draws a section of the grid containing 2 columns
 // Arguments:   points: Array of 4 points representing a rectangle on the grid.
 // Description: The triangles begin at point[0] which is the minimum (root, x and y point ar minimized) 
 //				point of the rectangle. The diagonal is drawn to the last point then the bounding rectangle
@@ -50,10 +50,10 @@ draw_canvas.prototype.draw_triangles = function(points) {
 	// close the path
 	this.context.closePath();
 }
-// Function: draw_triangles
-// Create a new triangle grid object
+// Function: clear
+// Clear the canvas
 // Arguments:   x_size: the width of the canvas,
-//				y_size: the height of the canvas
+//		y_size: the height of the canvas
 // Description: forces a reset of the canvas by changing its dimensions
 // Return:      void
 draw_canvas.prototype.clear = function(x_size, y_size) {
